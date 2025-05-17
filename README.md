@@ -13,7 +13,7 @@ A "UART Transmitter and Receiver System" implemented on the FPGA board for my EE
 - ModelSim 10.5b
 - NI VirtualBench Software
 
-# What I learned
+# What I Learned
 - Understood the ideas of building a UART Controller by using common digital building blocks (counters, timers, shift registers, flags)
 - Modified the given code and developed a new feature: receive a character from the Terminal, wait for 1 second, and echo it back to the Terminal 4 times
 - Implemented the sequential logic approach and experimented with the Finite State Machine for comparison
