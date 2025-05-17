@@ -1,0 +1,487 @@
+Analysis & Synthesis report for rs232_top_full
+Sat May 17 16:22:01 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |rs232_top_full
+ 13. Parameter Settings for User Entity Instance: rx_rs232:DUT_RX
+ 14. Parameter Settings for User Entity Instance: rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter
+ 15. Parameter Settings for User Entity Instance: tx_rs232:DUT_TX
+ 16. Parameter Settings for User Entity Instance: tx_rs232:DUT_TX|Baud_Counter:TX_Counter
+ 17. Parameter Settings for User Entity Instance: One_Sec_Timer:DUT_Timer
+ 18. Port Connectivity Checks: "tx_rs232:DUT_TX|Baud_Counter:TX_Counter"
+ 19. Port Connectivity Checks: "rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat May 17 16:22:01 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; rs232_top_full                              ;
+; Top-level Entity Name           ; rs232_top_full                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 92                                          ;
+; Total pins                      ; 35                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; rs232_top_full     ; rs232_top_full     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; source/tx_rs232.sv               ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/tx_rs232.sv        ;         ;
+; source/rx_rs232.sv               ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rx_rs232.sv        ;         ;
+; source/rs232_top_full.sv         ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv  ;         ;
+; source/one_sec_counter.sv        ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/one_sec_counter.sv ;         ;
+; source/hex_7seg.sv               ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/hex_7seg.sv        ;         ;
+; source/baud_counter.sv           ; yes             ; User SystemVerilog HDL File  ; D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/baud_counter.sv    ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 75            ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 118           ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 30            ;
+;     -- 5 input functions                    ; 8             ;
+;     -- 4 input functions                    ; 21            ;
+;     -- <=3 input functions                  ; 59            ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 92            ;
+;                                             ;               ;
+; I/O pins                                    ; 35            ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; iCLK_50~input ;
+; Maximum fan-out                             ; 92            ;
+; Total fan-out                               ; 753           ;
+; Average fan-out                             ; 2.69          ;
++---------------------------------------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                            ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name    ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+----------------+--------------+
+; |rs232_top_full                       ; 118 (5)             ; 92 (5)                    ; 0                 ; 0          ; 35   ; 0            ; |rs232_top_full                                               ; rs232_top_full ; work         ;
+;    |One_Sec_Timer:DUT_Timer|          ; 42 (42)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|One_Sec_Timer:DUT_Timer                       ; One_Sec_Timer  ; work         ;
+;    |hex_7seg:DUT_HEX0|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|hex_7seg:DUT_HEX0                             ; hex_7seg       ; work         ;
+;    |hex_7seg:DUT_HEX1|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|hex_7seg:DUT_HEX1                             ; hex_7seg       ; work         ;
+;    |rx_rs232:DUT_RX|                  ; 24 (3)              ; 33 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|rx_rs232:DUT_RX                               ; rx_rs232       ; work         ;
+;       |Baud_Counter:RS232_RX_Counter| ; 21 (21)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter ; Baud_Counter   ; work         ;
+;    |tx_rs232:DUT_TX|                  ; 33 (12)             ; 26 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|tx_rs232:DUT_TX                               ; tx_rs232       ; work         ;
+;       |Baud_Counter:TX_Counter|       ; 21 (21)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |rs232_top_full|tx_rs232:DUT_TX|Baud_Counter:TX_Counter       ; Baud_Counter   ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; send_counter[3]                       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 58    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; tx_rs232:DUT_TX|serial_data_out         ; 2       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[0]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[1]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[2]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[3]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[4]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[5]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[6]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[7]   ; 1       ;
+; tx_rs232:DUT_TX|data_out_shift_reg[8]   ; 1       ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |rs232_top_full|rx_rs232:DUT_RX|data_in_shift_reg[1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |rs232_top_full|rx_rs232:DUT_RX|received_data[1]                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |rs232_top_full|send_counter[1]                                               ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |rs232_top_full|One_Sec_Timer:DUT_Timer|time_counter[3]                       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |rs232_top_full|rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter|baud_counter[8] ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |rs232_top_full|tx_rs232:DUT_TX|Baud_Counter:TX_Counter|baud_counter[1]       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |rs232_top_full|One_Sec_Timer:DUT_Timer|total_time_counter[3]                 ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |rs232_top_full|rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter|bit_counter[0]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |rs232_top_full|tx_rs232:DUT_TX|Baud_Counter:TX_Counter|bit_counter[3]        ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |rs232_top_full|tx_rs232:DUT_TX|data_out_shift_reg[1]                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |rs232_top_full ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rx_rs232:DUT_RX ;
++------------------+-----------+-------------------------------+
+; Parameter Name   ; Value     ; Type                          ;
++------------------+-----------+-------------------------------+
+; BAUD_COUNT       ; 110110010 ; Unsigned Binary               ;
+; DATA_WIDTH       ; 8         ; Signed Integer                ;
+; TOTAL_DATA_WIDTH ; 10        ; Signed Integer                ;
++------------------+-----------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter ;
++----------------------+----------------------------------+----------------------------------+
+; Parameter Name       ; Value                            ; Type                             ;
++----------------------+----------------------------------+----------------------------------+
+; BAUD_COUNTER_WIDTH   ; 9                                ; Signed Integer                   ;
+; BAUD_COUNT           ; 110110010                        ; Unsigned Binary                  ;
+; BAUD_TICK_COUNT      ; 00000000000000000000000110110001 ; Unsigned Binary                  ;
+; HALF_BAUD_TICK_COUNT ; 00000000000000000000000011011001 ; Unsigned Binary                  ;
+; DATA_WIDTH           ; 8                                ; Signed Integer                   ;
+; TOTAL_DATA_WIDTH     ; 10                               ; Signed Integer                   ;
++----------------------+----------------------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tx_rs232:DUT_TX ;
++----------------+-----------+---------------------------------+
+; Parameter Name ; Value     ; Type                            ;
++----------------+-----------+---------------------------------+
+; DATA_WIDTH     ; 8         ; Signed Integer                  ;
+; BAUD_COUNT     ; 110110010 ; Unsigned Binary                 ;
++----------------+-----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tx_rs232:DUT_TX|Baud_Counter:TX_Counter ;
++----------------------+----------------------------------+----------------------------+
+; Parameter Name       ; Value                            ; Type                       ;
++----------------------+----------------------------------+----------------------------+
+; BAUD_COUNTER_WIDTH   ; 9                                ; Signed Integer             ;
+; BAUD_COUNT           ; 110110010                        ; Unsigned Binary            ;
+; BAUD_TICK_COUNT      ; 00000000000000000000000110110001 ; Unsigned Binary            ;
+; HALF_BAUD_TICK_COUNT ; 00000000000000000000000011011001 ; Unsigned Binary            ;
+; DATA_WIDTH           ; 8                                ; Signed Integer             ;
+; TOTAL_DATA_WIDTH     ; 10                               ; Signed Integer             ;
++----------------------+----------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: One_Sec_Timer:DUT_Timer  ;
++------------------+----------------------------------+-----------------+
+; Parameter Name   ; Value                            ; Type            ;
++------------------+----------------------------------+-----------------+
+; TIMER_WIDTH      ; 19                               ; Signed Integer  ;
+; TIMER_COUNT      ; 1111010000100100000              ; Unsigned Binary ;
+; TIMER_TICK_COUNT ; 00000000000001111010000100011111 ; Unsigned Binary ;
+; TOTAL_TIMER      ; 100                              ; Signed Integer  ;
++------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "tx_rs232:DUT_TX|Baud_Counter:TX_Counter"     ;
++----------------------------+--------+----------+------------------------+
+; Port                       ; Type   ; Severity ; Details                ;
++----------------------------+--------+----------+------------------------+
+; baud_clock_half_cycle_edge ; Output ; Info     ; Explicitly unconnected ;
++----------------------------+--------+----------+------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter" ;
++----------------------------+--------+----------+--------------------------+
+; Port                       ; Type   ; Severity ; Details                  ;
++----------------------------+--------+----------+--------------------------+
+; baud_clock_full_cycle_edge ; Output ; Info     ; Explicitly unconnected   ;
++----------------------------+--------+----------+--------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 92                          ;
+;     ENA               ; 9                           ;
+;     ENA SCLR          ; 17                          ;
+;     SCLR              ; 41                          ;
+;     plain             ; 25                          ;
+; arriav_lcell_comb     ; 123                         ;
+;     arith             ; 44                          ;
+;         1 data inputs ; 43                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 79                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 21                          ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 30                          ;
+; boundary_port         ; 35                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.94                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat May 17 16:21:26 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rs232_top_full -c rs232_top_full
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file source/tx_rs232.sv
+    Info (12023): Found entity 1: tx_rs232 File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/tx_rs232.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file source/rx_rs232.sv
+    Info (12023): Found entity 1: rx_rs232 File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rx_rs232.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file source/rs232_top_full.sv
+    Info (12023): Found entity 1: rs232_top_full File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file source/one_sec_counter.sv
+    Info (12023): Found entity 1: One_Sec_Timer File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/one_sec_counter.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file source/hex_7seg.sv
+    Info (12023): Found entity 1: hex_7seg File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/hex_7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file source/baud_counter.sv
+    Info (12023): Found entity 1: Baud_Counter File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/baud_counter.sv Line: 2
+Info (12127): Elaborating entity "rs232_top_full" for the top level hierarchy
+Warning (10034): Output port "oLEDR[8]" at rs232_top_full.sv(8) has no driver File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+Warning (10034): Output port "oLEDR[5..4]" at rs232_top_full.sv(8) has no driver File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+Warning (10034): Output port "oLEDR[2..0]" at rs232_top_full.sv(8) has no driver File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+Info (12128): Elaborating entity "rx_rs232" for hierarchy "rx_rs232:DUT_RX" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 46
+Info (12128): Elaborating entity "Baud_Counter" for hierarchy "rx_rs232:DUT_RX|Baud_Counter:RS232_RX_Counter" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rx_rs232.sv Line: 31
+Info (12128): Elaborating entity "hex_7seg" for hierarchy "hex_7seg:DUT_HEX0" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 49
+Info (12128): Elaborating entity "tx_rs232" for hierarchy "tx_rs232:DUT_TX" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 63
+Info (12128): Elaborating entity "One_Sec_Timer" for hierarchy "One_Sec_Timer:DUT_Timer" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 95
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "oLEDR[0]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+    Warning (13410): Pin "oLEDR[1]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+    Warning (13410): Pin "oLEDR[2]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+    Warning (13410): Pin "oLEDR[4]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+    Warning (13410): Pin "oLEDR[5]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+    Warning (13410): Pin "oLEDR[8]" is stuck at GND File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "iKEY[1]" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 4
+    Warning (15610): No output dependent on input pin "iKEY[2]" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 4
+    Warning (15610): No output dependent on input pin "iKEY[3]" File: D:/RMIT - Bachelor/Sem 6/ADD2/Quartus/Assessment 2 P2/EEET2476_s3979462_Assessment 2 P2/uart-system-test/program 2/source/rs232_top_full.sv Line: 4
+Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 135 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Sat May 17 16:22:01 2025
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:43
+
+
