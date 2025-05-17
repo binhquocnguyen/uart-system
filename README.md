@@ -1,5 +1,5 @@
-# uart-system
-UART Transmitter and Receiver System
+# UART System
+A "UART Transmitter and Receiver System" implemented on the FPGA board for my EEET2476 – Advanced Digital Design 2 course
 
 # Hardware
 - DE10 Standard FPGA board
